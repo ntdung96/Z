@@ -140,12 +140,11 @@ rankall <- function(outcome, num = "best") {
       split.data <- split(result, result$state)
       if(num == "worst") {
             final.split <- lapply(split.data, function(fx) tail(fx, 1)[, 1:2])
-            output <- do.call(rbind, final.split)
       } else {
             if(num == "best") {
                   num <- 1L
             }
             final.split <- lapply(split.data, function(fx) fx[num, 1:2])
-            output <- do.call(rbind, final.split)
       }
+      output <- do.call(rbind, final.split)
 }
