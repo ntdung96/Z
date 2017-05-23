@@ -13,5 +13,8 @@ GREwordassign <- function(seed = 100, pvalue = 0.05) {
                         break
                   }
             }
+            if(i == seed) {
+                  stop("no sequence found, increase seed numbers\n")
+            }
       }
 }
